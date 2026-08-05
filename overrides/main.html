@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{#
+  The site is not meant to be found yet: it is being evaluated on two hosts,
+  the content is incomplete, and both may be deleted. robots.txt asks crawlers
+  not to fetch; this asks them not to index what they fetch anyway, which is
+  the half that actually keeps a page out of search results.
+
+  Remove this override once a host is chosen and the content is ready to be
+  found.
+#}
+{% block extrahead %}
+  <meta name="robots" content="noindex, nofollow">
+{% endblock %}

@@ -1,0 +1,51 @@
+site_name: QBot Mini
+site_description: Open quadruped development platform — documentation
+
+repo_url: https://github.com/serval-robotics/qbot-mini-docs
+repo_name: qbot-mini-docs
+edit_uri: edit/main/docs/
+
+# site_url is deliberately unset while the site is being evaluated on two
+# hosts at once. Setting it would emit a canonical link pointing at whichever
+# host it names, from the other host. It gets set when a host is chosen.
+
+docs_dir: docs
+site_dir: _site
+
+theme:
+  name: material
+  # Adds the noindex meta tag; see overrides/main.html.
+  custom_dir: overrides
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.sections
+    - navigation.top
+    - content.code.copy
+    - search.suggest
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+
+# Each page joins the tree in the commit that creates it, so a strict build
+# never sees an entry pointing at a page that does not exist yet.
+nav:
+  - Home: index.md

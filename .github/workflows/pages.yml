@@ -1,0 +1,60 @@
+name: pages
+
+# Read the Docs builds this same tree from .readthedocs.yaml. Both hosts run
+# while we decide which one to keep; whichever loses gets deleted along with
+# its config.
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install
+        run: pip install -r requirements.txt
+
+      # Illegal Basis values fail here; unfilled figures are printed and
+      # tolerated, so a half-characterised robot can still publish.
+      - name: Check the Basis columns
+        run: python3 scripts/docs_gaps.py docs
+
+      - name: Verify the scanner itself
+        run: python3 -m pytest scripts/test_docs_gaps.py -q
+
+      - name: Build
+        run: mkdocs build --strict
+
+      - uses: actions/upload-pages-artifact@v3
+        if: github.event_name == 'push'
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
