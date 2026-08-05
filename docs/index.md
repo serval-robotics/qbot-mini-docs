@@ -8,29 +8,17 @@ runs the same control stack as the hardware. Open at the level where research
 actually happens: you command the body, and you can go below that when you need
 to.
 
-<div class="grid cards" markdown>
+## Start here
 
--   **Send it a command**
+[**Commanding motion**](using/commanding-motion.md) — one topic drives the
+robot. Body velocity in, locomotion out, the same interface in simulation and on
+hardware.
 
-    One topic drives the robot. Body velocity in, locomotion out — the same
-    interface in simulation and on hardware.
+[**Conventions**](using/conventions.md) — frames, leg order, joint order, units.
+Four minutes here saves an afternoon.
 
-    [Commanding motion](using/commanding-motion.md)
-
--   **Get the signs right**
-
-    Frames, leg order, joint order, units. Four minutes here saves an afternoon.
-
-    [Conventions](using/conventions.md)
-
--   **See the numbers**
-
-    What is measured, what is simulated, and what is not characterized yet —
-    stated separately.
-
-    [Specifications](product/specifications.md)
-
-</div>
+[**Specifications**](product/specifications.md) — what is measured, what is
+simulated, and what is not characterized yet, stated separately.
 
 ## Where this is going
 
