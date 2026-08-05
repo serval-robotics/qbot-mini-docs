@@ -41,12 +41,12 @@ python3 scripts/docs_gaps.py docs
 ```
 
 lists every figure still uncharacterised, and fails if a `Basis` value is not
-one of the four. No figure is ever invented; unknown means `Not yet
+one of the five. No figure is ever invented; unknown means `Not yet
 characterized`.
 
 ## Publishing
 
-The site is currently built by two hosts at once while we decide which to keep:
-Read the Docs (`.readthedocs.yaml`) and GitHub Pages
-(`.github/workflows/pages.yml`). Both are `noindex` and neither is on a custom
-domain yet.
+The site is built by GitHub Actions and served from GitHub Pages
+(`.github/workflows/pages.yml`). It is `noindex` and not yet on a custom
+domain.
+

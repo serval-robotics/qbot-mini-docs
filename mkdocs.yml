@@ -39,7 +39,29 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Product:
+      - Overview: product/overview.md
       - Specifications: product/specifications.md
+      - Capabilities and limits: product/capabilities.md
+      - Safety: product/safety.md
+  - Getting started:
+      - Simulation in ten minutes: getting-started/simulation.md
+      - The web console: getting-started/web-console.md
+      - First run on hardware: getting-started/hardware.md
   - Using the robot:
       - Conventions: using/conventions.md
       - Commanding motion: using/commanding-motion.md
+      - Scenarios: using/scenarios.md
+      - Recording and data: using/recording-and-data.md
+  - Integration:
+      - System architecture: integration/architecture.md
+      - ROS 2 interface reference: integration/ros2-interface.md
+      - Mounting and payload: integration/mounting-and-payload.md
+      - Customization and services: integration/customization.md
+  - Teaching and research:
+      - Course modules: teaching/course-modules.md
+      - Lab exercises: teaching/lab-exercises.md
+      - Digital twin: teaching/digital-twin.md
+  - Reference:
+      - Build from source: reference/build-from-source.md
+      - Troubleshooting: reference/troubleshooting.md
+      - Roadmap: reference/roadmap.md
