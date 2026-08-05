@@ -23,16 +23,17 @@ python3 -m venv .venv
 ## Figures and the Basis column
 
 Specification tables carry a third column stating how each figure was obtained.
-Exactly four values are legal:
+Exactly five values are legal:
 
 | Basis | Meaning |
 | :- | :- |
 | `Measured` | Taken from the physical robot |
+| `Vendor specification` | From a component datasheet — someone else's measurement |
 | `Design target` | Intended, not yet confirmed |
 | `Simulated` | From the simulation model |
 | `Not yet characterized` | Unknown; the value column reads `—` |
 
-`Measured` and `Design target` may carry a qualifier after an em dash, e.g.
+Any of them may carry a qualifier after an em dash, e.g.
 `Measured — trot, flat floor`.
 
 ```bash

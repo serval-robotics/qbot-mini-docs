@@ -11,7 +11,13 @@ import sys
 from dataclasses import dataclass
 from pathlib import Path
 
-LEGAL = ("Measured", "Design target", "Simulated", "Not yet characterized")
+LEGAL = (
+    "Measured",
+    "Vendor specification",
+    "Design target",
+    "Simulated",
+    "Not yet characterized",
+)
 GAP = "Not yet characterized"
 
 

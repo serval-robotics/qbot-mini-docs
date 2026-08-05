@@ -13,6 +13,7 @@ TABLE = """\
 | Max forward speed | 0.22 m/s | Measured — trot, flat floor |
 | Runtime | 1.5 h | Design target |
 | Contact model | — | Simulated |
+| Peak joint torque | 1.39 N·m | Vendor specification — Feetech HL3915 |
 | Payload | — | Not yet characterized |
 """
 
@@ -26,11 +27,19 @@ def test_unfilled_entries_are_reported_as_gaps():
 def test_gap_carries_its_file_and_line():
     gaps, _ = docs_gaps.scan(TABLE, "product/specifications.md")
     assert gaps[0].path == "product/specifications.md"
-    assert gaps[0].line == 7
+    assert gaps[0].line == 8
 
 
-def test_all_four_legal_basis_values_are_accepted():
+def test_every_legal_basis_value_is_accepted():
     _, violations = docs_gaps.scan(TABLE, "x.md")
+    assert violations == []
+
+
+def test_a_vendor_figure_is_neither_measured_nor_a_gap():
+    """A datasheet number is someone else's measurement, so it is its own basis:
+    calling it Measured would overclaim, and Design target would be wrong."""
+    gaps, violations = docs_gaps.scan(TABLE, "x.md")
+    assert [g.parameter for g in gaps] == ["Payload"]
     assert violations == []
 
 

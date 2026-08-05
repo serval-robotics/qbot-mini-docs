@@ -49,3 +49,8 @@ markdown_extensions:
 # never sees an entry pointing at a page that does not exist yet.
 nav:
   - Home: index.md
+  - Product:
+      - Specifications: product/specifications.md
+  - Using the robot:
+      - Conventions: using/conventions.md
+      - Commanding motion: using/commanding-motion.md
