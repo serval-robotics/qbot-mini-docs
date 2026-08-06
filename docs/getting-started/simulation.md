@@ -6,7 +6,7 @@ here walks there.
 
 ## What you need
 
-| | |
+| Requirement | Value |
 | :- | :- |
 | Operating system | Ubuntu 24.04 |
 | ROS 2 | Jazzy |
@@ -84,7 +84,7 @@ message it sends.
 
 ## What to try next
 
-| | |
+| If you want to | Go to |
 | :- | :- |
 | Drive it by hand | [The web console](web-console.md) |
 | Script a repeatable route | [Scenarios and recording](../programming/scenarios-and-recording.md) |

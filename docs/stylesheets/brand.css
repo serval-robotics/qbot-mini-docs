@@ -1,89 +1,459 @@
-/* Serval Robotics brand palette, taken from servalrobotics.com so the
-   documentation and the website read as one company. The website is a dark
-   design; the light scheme below is its inversion rather than a second
-   palette. */
+/* QBot Mini documentation — Serval Robotics
+ *
+ * Colours and typefaces come from servalrobotics.com so the documentation and
+ * the website read as one company. The visual language is the one the subject
+ * already speaks: engineering drawing. Hairline rules, monospaced figures,
+ * restrained colour, and one accent that carries meaning rather than emphasis.
+ */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap");
 
 :root {
-  --serval-blue:      #4c86ff;
-  --serval-blue-ink:  #86a9ff;
-  --serval-gold:      #d6a94e;
-  --serval-paper:     #0d0e12;
-  --serval-panel:     #15161d;
-  --serval-ink:       #edeef2;
-  --serval-ink-muted: #a3a5b0;
-  --serval-line:      #343643;
+  --sr-blue:       #4c86ff;
+  --sr-blue-ink:   #86a9ff;
+  --sr-gold:       #d6a94e;
+  --sr-paper:      #0d0e12;
+  --sr-panel:      #15161d;
+  --sr-ink:        #edeef2;
+  --sr-ink-muted:  #a3a5b0;
+  --sr-line:       #343643;
+
+  --sr-display: "Space Grotesk", "Noto Sans TC", sans-serif;
 }
 
-/* Light scheme. */
+/* Light scheme — the website's palette inverted, not a second palette. */
 [data-md-color-scheme="default"] {
-  --md-primary-fg-color:        var(--serval-paper);
-  --md-primary-fg-color--light: var(--serval-panel);
-  --md-primary-fg-color--dark:  #06070a;
-  --md-primary-bg-color:        var(--serval-ink);
-  --md-primary-bg-color--light: var(--serval-ink-muted);
+  --sr-fg:        #1a1d24;
+  --sr-fg-muted:  #5b6070;
+  --sr-bg:        #ffffff;
+  --sr-bg-panel:  #f6f7f9;
+  --sr-rule:      #dcdfe6;
+  --sr-accent:    #2c62d6;
 
-  --md-accent-fg-color:         var(--serval-blue);
+  --md-primary-fg-color:        var(--sr-paper);
+  --md-primary-fg-color--light: var(--sr-panel);
+  --md-primary-fg-color--dark:  #06070a;
+  --md-primary-bg-color:        var(--sr-ink);
+  --md-primary-bg-color--light: var(--sr-ink-muted);
+
+  --md-accent-fg-color:              var(--sr-blue);
   --md-accent-fg-color--transparent: rgba(76, 134, 255, 0.1);
-
-  --md-typeset-a-color:         #2c62d6;
+  --md-typeset-a-color:              var(--sr-accent);
 }
 
-/* Dark scheme, which is the website's own palette. */
+/* Dark scheme — the website's own palette. */
 [data-md-color-scheme="slate"] {
-  --md-primary-fg-color:        var(--serval-paper);
-  --md-primary-fg-color--light: var(--serval-panel);
+  --sr-fg:        var(--sr-ink);
+  --sr-fg-muted:  var(--sr-ink-muted);
+  --sr-bg:        var(--sr-paper);
+  --sr-bg-panel:  var(--sr-panel);
+  --sr-rule:      var(--sr-line);
+  --sr-accent:    var(--sr-blue-ink);
+
+  --md-primary-fg-color:        var(--sr-paper);
+  --md-primary-fg-color--light: var(--sr-panel);
   --md-primary-fg-color--dark:  #06070a;
-  --md-primary-bg-color:        var(--serval-ink);
-  --md-primary-bg-color--light: var(--serval-ink-muted);
+  --md-primary-bg-color:        var(--sr-ink);
+  --md-primary-bg-color--light: var(--sr-ink-muted);
 
-  --md-accent-fg-color:         var(--serval-blue-ink);
+  --md-accent-fg-color:              var(--sr-blue-ink);
   --md-accent-fg-color--transparent: rgba(134, 169, 255, 0.1);
+  --md-typeset-a-color:              var(--sr-blue-ink);
 
-  --md-typeset-a-color:         var(--serval-blue-ink);
-
-  --md-default-bg-color:        var(--serval-paper);
-  --md-default-bg-color--light: var(--serval-panel);
-  --md-default-fg-color:        var(--serval-ink);
-  --md-default-fg-color--light: var(--serval-ink-muted);
-  --md-code-bg-color:           var(--serval-panel);
+  --md-default-bg-color:        var(--sr-paper);
+  --md-default-bg-color--light: var(--sr-panel);
+  --md-default-fg-color:        var(--sr-ink);
+  --md-default-fg-color--light: var(--sr-ink-muted);
+  --md-code-bg-color:           var(--sr-panel);
 }
 
-/* The header sits on paper rather than on a saturated brand colour: a
-   documentation site is read for minutes at a time, and a full-width block of
-   #4c86ff at the top of every page competes with the text. Blue carries links
-   and active states instead, where it means something. */
-.md-header {
-  border-bottom: 1px solid var(--serval-line);
+/* ---- Typography ------------------------------------------------------- */
+
+/* Headings carry the brand's display face; body text stays on Inter, which
+   holds up over the long reference pages this site is mostly made of. */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3 {
+  font-family: var(--sr-display);
+  letter-spacing: -0.015em;
 }
 
-.md-tabs {
-  border-bottom: 1px solid var(--serval-line);
-}
-
-/* Tables carry most of this documentation's substance — specifications,
-   message fields, parameters — so they get a little more room than the
-   default and a header that reads as a header. */
-.md-typeset table:not([class]) th {
-  background-color: var(--md-default-fg-color--lightest);
+.md-typeset h1 {
   font-weight: 600;
+  color: var(--sr-fg);
+  font-size: 2.1rem;
+  line-height: 1.15;
+  margin-bottom: 0.9em;
 }
 
-.md-typeset table:not([class]) td,
+/* Section heads get a hairline above them: the page reads as a set of
+   delimited sections rather than a continuous scroll, which is how a
+   reference document is actually used. */
+.md-typeset h2 {
+  font-weight: 600;
+  font-size: 1.4rem;
+  border-top: 1px solid var(--sr-rule);
+  padding-top: 1.4rem;
+  margin-top: 2.6rem;
+}
+
+.md-typeset h1 + h2,
+.md-typeset .hero + h2 {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.md-typeset h3 {
+  font-weight: 600;
+  font-size: 1.08rem;
+}
+
+.md-header__title,
+.md-tabs__link {
+  font-family: var(--sr-display);
+}
+
+.md-header__topic:first-child > .md-ellipsis {
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* ---- Chrome ----------------------------------------------------------- */
+
+.md-header,
+.md-tabs {
+  border-bottom: 1px solid var(--sr-line);
+}
+
+.md-tabs__link {
+  font-size: 0.72rem;
+  opacity: 0.72;
+}
+
+.md-tabs__link--active,
+.md-tabs__link:hover {
+  opacity: 1;
+}
+
+/* ---- Tables ----------------------------------------------------------- */
+
+/* Specifications, message fields and parameters live in tables, so they are
+   the substance of this site rather than an aside. Hairlines instead of
+   boxes, and figures in the mono face so columns of numbers line up. */
+.md-typeset table:not([class]) {
+  border: 0;
+  border-top: 1px solid var(--sr-rule);
+  border-bottom: 1px solid var(--sr-rule);
+  font-size: 0.76rem;
+}
+
 .md-typeset table:not([class]) th {
-  padding: 0.7em 1em;
+  background: transparent;
+  border-bottom: 1px solid var(--sr-rule);
+  color: var(--sr-fg-muted);
+  font-family: var(--sr-display);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.85em 1.1em;
 }
 
-/* Diagrams are drawn to be read, not decorated: give them the full column and
-   keep them off the page background so the white-bordered SVGs do not float. */
+.md-typeset table:not([class]) td {
+  border-top: 1px solid var(--sr-rule);
+  padding: 0.8em 1.1em;
+  vertical-align: top;
+}
+
+.md-typeset table:not([class]) tr:first-child td {
+  border-top: 0;
+}
+
+.md-typeset table:not([class]) td:first-child {
+  min-width: 11rem;
+}
+
+.md-typeset table:not([class]) code {
+  font-size: 0.94em;
+  background: transparent;
+  padding: 0;
+  color: inherit;
+}
+
+/* ---- The Basis column ------------------------------------------------- */
+
+/* Every figure states how it was obtained. The mark encodes how solid the
+   number is: filled for measured, hollow for a datasheet, half for the
+   simulation, dashed for an intention, and the accent colour for a figure
+   nobody has taken yet. Tagged by basis.js. */
+/* The mark is positioned rather than inline: a qualifier long enough to wrap
+   would otherwise either be clipped or leave its second line hanging under the
+   mark instead of under the text. */
+.md-typeset [data-basis-table] td[data-basis] {
+  color: var(--sr-fg-muted);
+  font-size: 0.94em;
+  position: relative;
+  padding-left: 2.3em;
+}
+
+.md-typeset [data-basis-table] td[data-basis]::before {
+  content: "";
+  position: absolute;
+  left: 1.05em;
+  top: 1.15em;
+  width: 0.62em;
+  height: 0.62em;
+  border-radius: 50%;
+}
+
+.md-typeset [data-basis-table] td[data-basis="measured"]::before {
+  background: var(--sr-fg);
+}
+
+.md-typeset [data-basis-table] td[data-basis="vendor"]::before {
+  box-shadow: inset 0 0 0 1.5px var(--sr-fg-muted);
+}
+
+.md-typeset [data-basis-table] td[data-basis="simulated"]::before {
+  background: linear-gradient(90deg, var(--sr-fg-muted) 50%, transparent 50%);
+  box-shadow: inset 0 0 0 1.5px var(--sr-fg-muted);
+}
+
+.md-typeset [data-basis-table] td[data-basis="target"]::before {
+  border: 1.5px dashed var(--sr-fg-muted);
+  width: 0.5em;
+  height: 0.5em;
+}
+
+.md-typeset [data-basis-table] td[data-basis="unknown"] {
+  color: var(--sr-gold);
+}
+
+.md-typeset [data-basis-table] td[data-basis="unknown"]::before {
+  background: var(--sr-gold);
+  opacity: 0.55;
+}
+
+/* ---- Diagrams --------------------------------------------------------- */
+
 .md-typeset img[src$=".svg"] {
   display: block;
   width: 100%;
-  max-width: 34rem;
-  margin: 1.6em auto;
+  max-width: 32rem;
+  margin: 1.8em auto;
 }
 
-/* The Basis column's value is that it is scannable. */
-.md-typeset table:not([class]) td:last-child {
-  color: var(--md-default-fg-color--light);
-  font-size: 0.92em;
+/* ---- Home page hero --------------------------------------------------- */
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 2.2rem;
+  align-items: center;
+  margin: 0 0 1.6rem;
+}
+
+.hero__eyebrow {
+  font-family: var(--sr-display);
+  font-size: 0.64rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--sr-fg-muted);
+  margin: 0 0 0.7rem;
+}
+
+.md-typeset .hero h1 {
+  margin: 0 0 0.6rem;
+  font-size: 2.5rem;
+}
+
+.md-typeset .hero p {
+  margin: 0 0 0.9rem;
+}
+
+.hero__lede {
+  font-size: 0.86rem;
+  line-height: 1.62;
+  color: var(--sr-fg-muted);
+}
+
+.hero__art img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ---- Spec plate ------------------------------------------------------- */
+
+/* Four figures and how each was obtained — the same discipline the
+   specification tables run on, stated on the first screen. The fourth is
+   deliberately one nobody has measured. */
+.plate {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  border-top: 1px solid var(--sr-rule);
+  border-bottom: 1px solid var(--sr-rule);
+  margin: 0 0 2.2rem;
+}
+
+.plate__cell {
+  padding: 1.05rem 1.1rem;
+  border-left: 1px solid var(--sr-rule);
+}
+
+.plate__cell:first-child {
+  border-left: 0;
+  padding-left: 0;
+}
+
+.plate__label {
+  display: block;
+  font-family: var(--sr-display);
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--sr-fg-muted);
+  margin-bottom: 0.5rem;
+}
+
+.plate__value {
+  display: block;
+  font-family: var(--md-code-font-family, monospace);
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--sr-fg);
+  line-height: 1.1;
+  margin-bottom: 0.5rem;
+}
+
+.plate__cell--unknown .plate__value {
+  color: var(--sr-gold);
+}
+
+.plate__basis {
+  display: block;
+  font-size: 0.6rem;
+  white-space: nowrap;
+  color: var(--sr-fg-muted);
+}
+
+.plate__basis::before {
+  content: "";
+  display: inline-block;
+  width: 0.58em;
+  height: 0.58em;
+  margin-right: 0.5em;
+  border-radius: 50%;
+  vertical-align: middle;
+  position: relative;
+  top: -0.05em;
+}
+
+.plate__basis--measured::before  { background: var(--sr-fg); }
+.plate__basis--vendor::before    { box-shadow: inset 0 0 0 1.5px var(--sr-fg-muted); }
+.plate__basis--simulated::before { background: linear-gradient(90deg, var(--sr-fg-muted) 50%, transparent 50%);
+                                   box-shadow: inset 0 0 0 1.5px var(--sr-fg-muted); }
+.plate__basis--unknown           { color: var(--sr-gold); }
+.plate__basis--unknown::before   { background: var(--sr-gold); opacity: 0.55; }
+
+/* ---- Cards ------------------------------------------------------------ */
+
+.md-typeset .grid.cards > ul > li {
+  border: 1px solid var(--sr-rule);
+  border-radius: 2px;
+  box-shadow: none;
+  padding: 1.1rem 1.2rem;
+  transition: border-color 120ms;
+}
+
+.md-typeset .grid.cards > ul > li:hover {
+  border-color: var(--sr-accent);
+  box-shadow: none;
+}
+
+.md-typeset .grid.cards > ul > li > hr {
+  display: none;
+}
+
+/* ---- Admonitions ------------------------------------------------------ */
+
+/* One background across the whole block: Material tints the title bar by type,
+   which against a panel body reads as two pieces joined rather than one note.
+   The type is carried by the rule and the icon instead. */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 2px;
+  border-width: 0 0 0 3px;
+  box-shadow: none;
+  background: var(--sr-bg-panel);
+  font-size: 0.74rem;
+}
+
+/* Matched through the parent so this outweighs Material's per-type rules
+   (.md-typeset .note > .admonition-title), which tint the bar by admonition
+   type and would otherwise win on specificity. */
+.md-typeset .admonition > .admonition-title,
+.md-typeset details > summary {
+  background: transparent;
+  font-family: var(--sr-display);
+  font-weight: 600;
+}
+
+/* Nothing between the title and the first paragraph. */
+.md-typeset .admonition-title + p {
+  margin-top: 0.4em;
+}
+
+/* ---- Narrow screens --------------------------------------------------- */
+
+@media screen and (max-width: 76.1875em) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1.4rem;
+  }
+
+  .hero__art {
+    order: -1;
+  }
+
+  .plate {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .plate__cell:nth-child(3) {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .plate__cell:nth-child(n + 3) {
+    border-top: 1px solid var(--sr-rule);
+  }
+}
+
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .hero h1 {
+    font-size: 1.9rem;
+  }
+
+  .plate {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .plate__cell {
+    border-left: 0;
+    padding-left: 0;
+    border-top: 1px solid var(--sr-rule);
+  }
+
+  .plate__cell:first-child {
+    border-top: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .md-typeset .grid.cards > ul > li {
+    transition: none;
+  }
 }

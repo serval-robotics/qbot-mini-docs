@@ -9,7 +9,7 @@
 
 ## Configuration
 
-| | |
+| Property | Value |
 | :- | :- |
 | Type | Quadruped, closed five-bar leg linkage |
 | Degrees of freedom | 12 — three per leg (`Hip`, `ThighRear`, `ThighFront`) |

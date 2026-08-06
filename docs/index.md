@@ -1,11 +1,50 @@
+<div class="hero" markdown>
+<div class="hero__text" markdown>
+
+<p class="hero__eyebrow">Serval Robotics</p>
+
 # QBot Mini
 
-An open quadruped development platform from
-[Serval Robotics](https://servalrobotics.com).
+Open quadruped development platform. Twelve joints, a closed five-bar leg, ROS 2
+on top, and a MuJoCo simulation that runs the same control stack as the
+hardware.
 
-Twelve joints, a closed five-bar leg, ROS 2 on top, and a MuJoCo simulation that
-runs the same control stack as the hardware. You command the body — a velocity,
-a turn rate, a posture — and the robot works out the joints.
+<p class="hero__lede" markdown>You command the body — a velocity, a turn rate, a
+posture — and the robot works out the joints. Everything runs on the machine:
+no cloud service, no network dependency.</p>
+
+</div>
+<div class="hero__art">
+  <img src="assets/qbot-mini.webp" alt="QBot Mini, a four-legged robot with closed five-bar leg linkages" width="1400" height="795">
+</div>
+</div>
+
+<div class="plate">
+  <div class="plate__cell">
+    <span class="plate__label">Mass</span>
+    <span class="plate__value">2.0 kg</span>
+    <span class="plate__basis plate__basis--measured">Measured</span>
+  </div>
+  <div class="plate__cell">
+    <span class="plate__label">Joints</span>
+    <span class="plate__value">12</span>
+    <span class="plate__basis plate__basis--measured">Three per leg</span>
+  </div>
+  <div class="plate__cell">
+    <span class="plate__label">Trot speed</span>
+    <span class="plate__value">0.22 m/s</span>
+    <span class="plate__basis plate__basis--simulated">Simulated</span>
+  </div>
+  <div class="plate__cell plate__cell--unknown">
+    <span class="plate__label">Payload</span>
+    <span class="plate__value">—</span>
+    <span class="plate__basis plate__basis--unknown">Not yet characterized</span>
+  </div>
+</div>
+
+Every figure in this documentation states how it was obtained, so you can tell
+which numbers are safe to design against. Where nobody has taken a measurement
+yet, it says so — see [Specifications](reference/specifications.md).
 
 ## What it does
 
