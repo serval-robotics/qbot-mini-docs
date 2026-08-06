@@ -30,6 +30,8 @@ Every four-leg array — `RobotCommand.legs`, `RobotState.legs` — is ordered:
 [0] FrontLeft   [1] FrontRight   [2] RearLeft   [3] RearRight
 ```
 
+![Body frame axes, leg naming and the positive yaw direction, seen from above](../assets/coordinate-frame.svg)
+
 !!! warning "There is no per-leg mirroring"
 
     Leg commands are **not** mirrored left to right by the software. A foot
@@ -49,7 +51,7 @@ Each leg carries three joints, ordered:
 
 The naming reflects the closed five-bar linkage: two thigh joints drive a pair
 of calf links that meet at a single foot tip, rather than the open hip-knee
-chain of a serial leg.
+chain of a serial leg. See [Leg geometry](leg-geometry.md).
 
 ## Units
 

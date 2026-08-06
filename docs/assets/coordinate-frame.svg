@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 340" role="img"
+     aria-label="Top-down view of QBot Mini showing the body frame axes, leg naming and positive yaw direction">
+  <style>
+    .edge  { fill: none; stroke: #37474f; stroke-width: 2; }
+    .body  { fill: #eceff1; stroke: #37474f; stroke-width: 2; }
+    .leg   { fill: #ffffff; stroke: #37474f; stroke-width: 2; }
+    .axis  { fill: none; stroke: #c62828; stroke-width: 2.5; }
+    .yaw   { fill: none; stroke: #1565c0; stroke-width: 2; stroke-dasharray: 5 4; }
+    .lbl   { font: 13px/1.4 system-ui, sans-serif; fill: #37474f; }
+    .lbl-a { font: bold 14px/1.4 system-ui, sans-serif; fill: #c62828; }
+    .lbl-y { font: 13px/1.4 system-ui, sans-serif; fill: #1565c0; }
+    .lbl-s { font: 11px/1.4 system-ui, sans-serif; fill: #607d8b; }
+    .fillA { fill: #c62828; }
+    .fillY { fill: #1565c0; }
+    @media (prefers-color-scheme: dark) {
+      .edge, .leg { stroke: #b0bec5; }
+      .leg  { fill: #37474f; }
+      .body { fill: #263238; stroke: #b0bec5; }
+      .lbl  { fill: #cfd8dc; }
+      .lbl-s{ fill: #90a4ae; }
+      .axis { stroke: #ef9a9a; }
+      .lbl-a{ fill: #ef9a9a; }
+      .fillA{ fill: #ef9a9a; }
+      .yaw  { stroke: #90caf9; }
+      .lbl-y{ fill: #90caf9; }
+      .fillY{ fill: #90caf9; }
+    }
+  </style>
+
+  <defs>
+    <marker id="arrowA" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="fillA"/>
+    </marker>
+    <marker id="arrowY" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="fillY"/>
+    </marker>
+  </defs>
+
+  <!-- Trunk, seen from above. Screen up is +x, screen left is +y. -->
+  <rect x="175" y="95" width="110" height="150" rx="10" class="body"/>
+
+  <!-- Legs, at the four corners of the trunk. -->
+  <circle cx="163" cy="118" r="15" class="leg"/>
+  <circle cx="297" cy="118" r="15" class="leg"/>
+  <circle cx="163" cy="222" r="15" class="leg"/>
+  <circle cx="297" cy="222" r="15" class="leg"/>
+  <text x="163" y="123" class="lbl" text-anchor="middle">FL</text>
+  <text x="297" y="123" class="lbl" text-anchor="middle">FR</text>
+  <text x="163" y="227" class="lbl" text-anchor="middle">RL</text>
+  <text x="297" y="227" class="lbl" text-anchor="middle">RR</text>
+
+  <text x="230" y="88" class="lbl-s" text-anchor="middle">front</text>
+  <text x="230" y="262" class="lbl-s" text-anchor="middle">rear</text>
+
+  <!-- Body-frame axes from the trunk centre. -->
+  <line x1="230" y1="170" x2="230" y2="42" class="axis" marker-end="url(#arrowA)"/>
+  <text x="238" y="46" class="lbl-a">+x</text>
+  <text x="238" y="62" class="lbl-s">forward</text>
+
+  <line x1="230" y1="170" x2="92" y2="170" class="axis" marker-end="url(#arrowA)"/>
+  <text x="92" y="162" class="lbl-a" text-anchor="middle">+y</text>
+  <text x="92" y="190" class="lbl-s" text-anchor="middle">left</text>
+
+  <!-- +z points out of the page: the standard circled dot. -->
+  <circle cx="230" cy="170" r="8" class="axis"/>
+  <circle cx="230" cy="170" r="2.5" class="fillA"/>
+  <text x="248" y="186" class="lbl-a">+z</text>
+  <text x="248" y="201" class="lbl-s">up, out of the page</text>
+
+  <!-- Positive yaw: right-hand rule about +z, so counter-clockwise here. -->
+  <path d="M 372 205 A 60 60 0 0 0 372 135" class="yaw" marker-end="url(#arrowY)"/>
+  <text x="386" y="166" class="lbl-y">+yaw_rate</text>
+  <text x="386" y="182" class="lbl-s">turns left</text>
+
+  <text x="20" y="308" class="lbl-s">Viewed from above. Leg order in every four-element array: FL, FR, RL, RR.</text>
+  <text x="20" y="326" class="lbl-s">Feet sit below the hips, so a foot position's z is negative.</text>
+</svg>

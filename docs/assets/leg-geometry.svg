@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 350" role="img"
+     aria-label="Side view of one QBot Mini leg showing the closed five-bar linkage, the three joints and the foot tip">
+  <style>
+    .link  { fill: none; stroke: #37474f; stroke-width: 5; stroke-linecap: round; }
+    .frame { fill: none; stroke: #90a4ae; stroke-width: 3; stroke-dasharray: 6 5; }
+    .joint { fill: #ffffff; stroke: #37474f; stroke-width: 2.5; }
+    .drive { fill: #c62828; stroke: #7f1d1d; stroke-width: 2; }
+    .foot  { fill: #37474f; stroke: #37474f; stroke-width: 2; }
+    .axis  { fill: none; stroke: #c62828; stroke-width: 2; }
+    .lbl   { font: 13px/1.4 system-ui, sans-serif; fill: #37474f; }
+    .lbl-a { font: bold 13px/1.4 system-ui, sans-serif; fill: #c62828; }
+    .lbl-s { font: 11px/1.4 system-ui, sans-serif; fill: #607d8b; }
+    .fillA { fill: #c62828; }
+    .ground{ fill: none; stroke: #90a4ae; stroke-width: 2; }
+    @media (prefers-color-scheme: dark) {
+      .link  { stroke: #cfd8dc; }
+      .joint { fill: #263238; stroke: #cfd8dc; }
+      .foot  { fill: #cfd8dc; stroke: #cfd8dc; }
+      .drive { fill: #ef9a9a; stroke: #ef9a9a; }
+      .lbl   { fill: #cfd8dc; }
+      .lbl-s { fill: #90a4ae; }
+      .axis  { stroke: #ef9a9a; }
+      .lbl-a { fill: #ef9a9a; }
+      .fillA { fill: #ef9a9a; }
+      .frame, .ground { stroke: #607d8b; }
+    }
+  </style>
+
+  <defs>
+    <marker id="ax" viewBox="0 0 10 10" refX="9" refY="5"
+            markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" class="fillA"/>
+    </marker>
+  </defs>
+
+  <!-- Hip: rotates the whole leg sideways, about the body's x axis. -->
+  <line x1="230" y1="35" x2="230" y2="72" class="link"/>
+  <circle cx="230" cy="35" r="9" class="drive"/>
+  <text x="246" y="33" class="lbl">Hip</text>
+  <text x="246" y="48" class="lbl-s">swings the leg sideways</text>
+
+  <!-- The fixed link of the five-bar: the span between the two driven joints. -->
+  <line x1="192" y1="80" x2="268" y2="80" class="frame"/>
+  <text x="230" y="100" class="lbl-s" text-anchor="middle">fixed link</text>
+
+  <!-- Two driven joints, rear and front. -->
+  <circle cx="192" cy="80" r="9" class="drive"/>
+  <circle cx="268" cy="80" r="9" class="drive"/>
+  <text x="120" y="70" class="lbl">ThighRear</text>
+  <text x="290" y="70" class="lbl">ThighFront</text>
+
+  <!-- Thigh links. -->
+  <line x1="192" y1="80" x2="148" y2="178" class="link"/>
+  <line x1="268" y1="80" x2="300" y2="172" class="link"/>
+  <circle cx="148" cy="178" r="7" class="joint"/>
+  <circle cx="300" cy="172" r="7" class="joint"/>
+  <text x="96" y="140" class="lbl-s">thigh</text>
+  <text x="330" y="136" class="lbl-s">thigh</text>
+
+  <!-- Calf links, meeting at a single foot tip: this is what closes the chain. -->
+  <line x1="148" y1="178" x2="224" y2="286" class="link"/>
+  <line x1="300" y1="172" x2="224" y2="286" class="link"/>
+  <text x="150" y="245" class="lbl-s">calf</text>
+  <text x="288" y="240" class="lbl-s">calf</text>
+
+  <circle cx="224" cy="286" r="9" class="foot"/>
+  <text x="240" y="282" class="lbl">Foot tip</text>
+  <text x="240" y="297" class="lbl-s">where both calves meet</text>
+
+  <line x1="120" y1="308" x2="360" y2="308" class="ground"/>
+
+  <!-- Body-frame axes for this side view: +x forward (right), +z up. -->
+  <line x1="60" y1="250" x2="60" y2="200" class="axis" marker-end="url(#ax)"/>
+  <text x="46" y="196" class="lbl-a">+z</text>
+  <line x1="60" y1="250" x2="110" y2="250" class="axis" marker-end="url(#ax)"/>
+  <text x="114" y="255" class="lbl-a">+x</text>
+
+  <text x="20" y="336" class="lbl-s">Joint order in every three-element array: Hip, ThighRear, ThighFront. The foot is below the hip, so its z is negative.</text>
+</svg>
