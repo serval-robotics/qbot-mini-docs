@@ -1,9 +1,5 @@
 name: pages
 
-# Read the Docs builds this same tree from .readthedocs.yaml. Both hosts run
-# while we decide which one to keep; whichever loses gets deleted along with
-# its config.
-
 on:
   # Manual trigger: GitHub's Pages deployment queue has stalled often enough
   # that republishing an unchanged tree needs to be possible without inventing
