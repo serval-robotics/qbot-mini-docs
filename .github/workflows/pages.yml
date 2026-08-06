@@ -56,5 +56,11 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
+      # The default ten-minute ceiling is the action's patience with GitHub's
+      # deployment queue, not a measure of how long publishing this site takes:
+      # the artifact is four megabytes. A queue that is briefly slow should not
+      # read as a broken build.
       - id: deployment
         uses: actions/deploy-pages@v4
+        with:
+          timeout: 1800000
