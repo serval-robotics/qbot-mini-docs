@@ -2,3 +2,5 @@ _site/
 .venv/
 __pycache__/
 .pytest_cache/
+
+_diagrams/

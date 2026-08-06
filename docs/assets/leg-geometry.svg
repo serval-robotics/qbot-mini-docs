@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 350" role="img"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 366" role="img"
      aria-label="Side view of one QBot Mini leg showing the closed five-bar linkage, the three joints and the foot tip">
   <style>
     .link  { fill: none; stroke: #37474f; stroke-width: 5; stroke-linecap: round; }
@@ -67,7 +67,9 @@
   <text x="240" y="282" class="lbl">Foot tip</text>
   <text x="240" y="297" class="lbl-s">where both calves meet</text>
 
-  <line x1="120" y1="308" x2="360" y2="308" class="ground"/>
+  <!-- No ground line: at standing height it lands between the foot and its
+       caption, and the lowest point of the linkage already reads as the foot.
+-->
 
   <!-- Body-frame axes for this side view: +x forward (right), +z up. -->
   <line x1="60" y1="250" x2="60" y2="200" class="axis" marker-end="url(#ax)"/>
@@ -75,5 +77,6 @@
   <line x1="60" y1="250" x2="110" y2="250" class="axis" marker-end="url(#ax)"/>
   <text x="114" y="255" class="lbl-a">+x</text>
 
-  <text x="20" y="336" class="lbl-s">Joint order in every three-element array: Hip, ThighRear, ThighFront. The foot is below the hip, so its z is negative.</text>
+  <text x="20" y="332" class="lbl-s">Joint order in every three-element array: Hip, ThighRear, ThighFront.</text>
+  <text x="20" y="350" class="lbl-s">The foot is below the hip, so its z is negative.</text>
 </svg>

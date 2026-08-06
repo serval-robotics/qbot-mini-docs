@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 430" role="img"
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 500" role="img"
      aria-label="Block diagram of the QBot Mini control chain from an application through the locomotion and actuation layers to the legs">
   <style>
     .open  { fill: #e3f2fd; stroke: #1565c0; stroke-width: 2; }
@@ -11,8 +11,9 @@
     .sub   { font: 12px/1.4 system-ui, sans-serif; fill: #546e7a; }
     .topic { font: 12px/1.4 ui-monospace, SFMono-Regular, Menlo, monospace; fill: #37474f; }
     .note  { font: 11px/1.4 system-ui, sans-serif; fill: #607d8b; }
-    .tag   { font: bold 10px/1.4 system-ui, sans-serif; fill: #607d8b; letter-spacing: .06em; }
-    .seaml { font: bold 11px/1.4 system-ui, sans-serif; fill: #1565c0; letter-spacing: .04em; }
+    .tag   { font: bold 10px/1.4 system-ui, sans-serif; fill: #78909c; letter-spacing: .08em; }
+    .seaml { font: bold 11px/1.4 system-ui, sans-serif; fill: #1565c0; letter-spacing: .06em; }
+    .seams { font: 11px/1.4 system-ui, sans-serif; fill: #1565c0; }
     .fillD { fill: #37474f; }
     .fillG { fill: #607d8b; }
     @media (prefers-color-scheme: dark) {
@@ -23,9 +24,10 @@
       .fb   { stroke: #90a4ae; }
       .seam { stroke: #64b5f6; }
       .ttl  { fill: #eceff1; }
-      .sub, .note, .tag { fill: #b0bec5; }
+      .sub, .note { fill: #b0bec5; }
+      .tag  { fill: #90a4ae; }
       .topic{ fill: #cfd8dc; }
-      .seaml{ fill: #64b5f6; }
+      .seaml, .seams { fill: #64b5f6; }
       .fillD{ fill: #b0bec5; }
       .fillG{ fill: #90a4ae; }
     }
@@ -43,45 +45,48 @@
   </defs>
 
   <!-- Your code. -->
-  <rect x="120" y="20" width="230" height="52" rx="8" class="open"/>
-  <text x="235" y="43" class="ttl" text-anchor="middle">Your application</text>
-  <text x="235" y="60" class="sub" text-anchor="middle">where the robot is told what to do</text>
+  <rect x="120" y="20" width="230" height="56" rx="8" class="open"/>
+  <text x="235" y="45" class="ttl" text-anchor="middle">Your application</text>
+  <text x="235" y="64" class="sub" text-anchor="middle">where the robot is told what to do</text>
 
-  <line x1="235" y1="72" x2="235" y2="112" class="flow" marker-end="url(#fa)"/>
-  <text x="246" y="90" class="topic">/body_cmd</text>
-  <text x="246" y="105" class="note">BodyCommand — velocity, yaw, posture</text>
+  <line x1="235" y1="76" x2="235" y2="118" class="flow" marker-end="url(#fa)"/>
+  <text x="248" y="93" class="topic">/body_cmd</text>
+  <text x="248" y="108" class="note">BodyCommand — velocity, yaw, posture</text>
 
-  <!-- The seam. -->
-  <line x1="30" y1="118" x2="470" y2="118" class="seam"/>
-  <text x="30" y="112" class="seaml">THE SEAM — everything above is yours</text>
+  <!-- The seam. Its label sits left of the arrow, not across it. -->
+  <line x1="20" y1="130" x2="490" y2="130" class="seam"/>
+  <text x="20" y="124" class="seaml">THE SEAM</text>
+  <text x="20" y="147" class="seams">everything above this line is yours</text>
 
-  <!-- Locomotion. -->
-  <rect x="120" y="132" width="230" height="60" rx="8" class="prop"/>
-  <text x="235" y="156" class="ttl" text-anchor="middle">Locomotion</text>
-  <text x="235" y="174" class="sub" text-anchor="middle">gait generation, body control</text>
-  <text x="340" y="148" class="tag" text-anchor="end">PROPRIETARY</text>
+  <!-- Locomotion. The proprietary tag is a kicker above the title, so the two
+       never collide however long the title becomes. -->
+  <rect x="120" y="160" width="230" height="74" rx="8" class="prop"/>
+  <text x="235" y="180" class="tag" text-anchor="middle">PROPRIETARY</text>
+  <text x="235" y="202" class="ttl" text-anchor="middle">Locomotion</text>
+  <text x="235" y="221" class="sub" text-anchor="middle">gait generation, body control</text>
 
-  <line x1="235" y1="192" x2="235" y2="232" class="flow" marker-end="url(#fa)"/>
-  <text x="246" y="210" class="topic">/leg_cmd</text>
-  <text x="246" y="225" class="note">RobotCommand — foot targets, forces</text>
+  <line x1="235" y1="234" x2="235" y2="276" class="flow" marker-end="url(#fa)"/>
+  <text x="248" y="251" class="topic">/leg_cmd</text>
+  <text x="248" y="266" class="note">RobotCommand — foot targets, forces</text>
 
   <!-- Actuation. -->
-  <rect x="120" y="252" width="230" height="60" rx="8" class="prop"/>
-  <text x="235" y="276" class="ttl" text-anchor="middle">Actuation</text>
-  <text x="235" y="294" class="sub" text-anchor="middle">impedance control, per joint</text>
-  <text x="340" y="268" class="tag" text-anchor="end">PROPRIETARY</text>
+  <rect x="120" y="286" width="230" height="74" rx="8" class="prop"/>
+  <text x="235" y="306" class="tag" text-anchor="middle">PROPRIETARY</text>
+  <text x="235" y="328" class="ttl" text-anchor="middle">Actuation</text>
+  <text x="235" y="347" class="sub" text-anchor="middle">impedance control, per joint</text>
 
-  <line x1="235" y1="312" x2="235" y2="342" class="flow" marker-end="url(#fa)"/>
+  <line x1="235" y1="360" x2="235" y2="396" class="flow" marker-end="url(#fa)"/>
 
   <!-- The legs, real or simulated. -->
-  <rect x="120" y="352" width="230" height="52" rx="8" class="hw"/>
-  <text x="235" y="375" class="ttl" text-anchor="middle">Legs</text>
-  <text x="235" y="392" class="sub" text-anchor="middle">the robot, or the simulation of it</text>
+  <rect x="120" y="406" width="230" height="56" rx="8" class="hw"/>
+  <text x="235" y="431" class="ttl" text-anchor="middle">Legs</text>
+  <text x="235" y="450" class="sub" text-anchor="middle">the robot, or the simulation of it</text>
 
   <!-- State feedback, back up the chain. -->
-  <path d="M 350 378 L 420 378 L 420 282 L 350 282" class="fb" marker-end="url(#fg)"/>
-  <text x="428" y="326" class="topic">/leg_state</text>
-  <text x="428" y="341" class="note">measured</text>
+  <path d="M 350 434 L 412 434 L 412 323 L 350 323" class="fb" marker-end="url(#fg)"/>
+  <text x="420" y="374" class="topic">/leg_state</text>
+  <text x="420" y="389" class="note">measured</text>
 
-  <text x="20" y="424" class="note">The chain below the seam is identical in simulation and on hardware, so an application written against one drives the other unchanged.</text>
+  <text x="20" y="484" class="note">The chain below the seam is identical in simulation and on hardware, so an</text>
+  <text x="20" y="497" class="note">application written against one drives the other unchanged.</text>
 </svg>
