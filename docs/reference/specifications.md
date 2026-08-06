@@ -18,6 +18,7 @@
 | Control interface | ROS 2 Jazzy, `/body_cmd` |
 | Onboard control loop | 200 Hz |
 | Simulation | MuJoCo, shipped with the robot; the same control stack drives both |
+| Visualisation | Isaac Sim render twin, optional — needs Windows and an NVIDIA RTX GPU |
 
 ## Physical
 

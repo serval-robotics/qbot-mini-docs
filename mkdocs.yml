@@ -95,6 +95,7 @@ nav:
       - ROS 2 interface: programming/ros2-interface.md
       - Parameters: programming/parameters.md
       - Scenarios and recording: programming/scenarios-and-recording.md
+      - Visualisation: programming/visualisation.md
   - Maintenance:
       - Routine checks: maintenance/routine-checks.md
       - Troubleshooting: maintenance/troubleshooting.md
