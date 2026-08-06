@@ -15,7 +15,7 @@ no cloud service, no network dependency.</p>
 
 </div>
 <div class="hero__art">
-  <img src="assets/qbot-mini.webp" alt="QBot Mini, a four-legged robot with closed five-bar leg linkages" width="1400" height="795">
+  <img src="assets/render-placeholder.svg" alt="Placeholder reserved for the product render" width="1300" height="738">
 </div>
 </div>
 

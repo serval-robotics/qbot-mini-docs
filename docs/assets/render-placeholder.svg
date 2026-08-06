@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1300 738" role="img"
+     aria-label="Placeholder for the product render">
+  <style>
+    .frame { fill: none; stroke: #c4c8d2; stroke-width: 3; stroke-dasharray: 14 10; }
+    .tick  { fill: none; stroke: #c4c8d2; stroke-width: 3; }
+    .lbl   { font: 500 62px/1.4 "Space Grotesk", system-ui, sans-serif; fill: #9aa0ae; letter-spacing: 0.14em; }
+    .sub   { font: 46px/1.4 system-ui, sans-serif; fill: #b3b8c4; }
+    @media (prefers-color-scheme: dark) {
+      .frame, .tick { stroke: #3d4250; }
+      .lbl { fill: #6b7280; }
+      .sub { fill: #565c69; }
+    }
+  </style>
+
+  <rect x="70" y="60" width="1160" height="618" rx="4" class="frame"/>
+
+  <!-- Corner ticks, the way a drawing marks a reserved area. -->
+  <path d="M 70 130 L 70 60 L 140 60" class="tick"/>
+  <path d="M 1160 60 L 1230 60 L 1230 130" class="tick"/>
+  <path d="M 1230 608 L 1230 678 L 1160 678" class="tick"/>
+  <path d="M 140 678 L 70 678 L 70 608" class="tick"/>
+
+  <text x="650" y="352" class="lbl" text-anchor="middle">PRODUCT RENDER</text>
+  <text x="650" y="424" class="sub" text-anchor="middle">reserved</text>
+</svg>

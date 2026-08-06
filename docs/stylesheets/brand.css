@@ -278,10 +278,13 @@
   color: var(--sr-fg-muted);
 }
 
-.hero__art img {
+.hero__art img,
+.md-typeset .hero__art img[src$=".svg"] {
   display: block;
   width: 100%;
+  max-width: none;
   height: auto;
+  margin: 0;
 }
 
 /* ---- Spec plate ------------------------------------------------------- */
