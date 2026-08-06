@@ -5,34 +5,72 @@ repo_url: https://github.com/serval-robotics/qbot-mini-docs
 repo_name: qbot-mini-docs
 edit_uri: edit/main/docs/
 
-# site_url is deliberately unset while the site is being evaluated on two
-# hosts at once. Setting it would emit a canonical link pointing at whichever
-# host it names, from the other host. It gets set when a host is chosen.
+# site_url is deliberately unset until the site moves to its own domain:
+# setting it emits a canonical link, which should not point at a hostname we
+# are still treating as temporary.
 
 docs_dir: docs
 site_dir: _site
 
 theme:
-  name: readthedocs
+  name: material
   # Adds the noindex meta tag; see overrides/main.html.
   custom_dir: overrides
-  highlightjs: true
-  hljs_languages:
-    - python
-    - yaml
-    - bash
+  logo: assets/logo.svg
+  favicon: assets/favicon.svg
+  font:
+    text: Inter
+    code: JetBrains Mono
+  # Brand colours are defined in stylesheets/brand.css rather than picked from
+  # Material's palette, so the site matches servalrobotics.com exactly.
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - content.code.copy
+    - search.suggest
+    - search.highlight
 
-# Standard Python-Markdown extensions only: the built-in theme styles these,
-# and nothing here depends on a theme-specific stylesheet.
+extra_css:
+  - stylesheets/brand.css
+
 markdown_extensions:
   - admonition
   - attr_list
   - md_in_html
   - tables
-  - fenced_code
-  - codehilite
   - toc:
       permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+
+extra:
+  social:
+    - icon: fontawesome/solid/globe
+      link: https://servalrobotics.com
+      name: Serval Robotics
+
+copyright: >
+  Serval Robotics · Documentation version 0.0
 
 # Each page joins the tree in the commit that creates it, so a strict build
 # never sees an entry pointing at a page that does not exist yet.

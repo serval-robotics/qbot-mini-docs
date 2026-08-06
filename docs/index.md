@@ -31,13 +31,34 @@ Stating this plainly is what makes the rest of the documentation worth trusting.
 
 ## How to read this
 
-| If you want to | Start at |
-| :- | :- |
-| See it move, without hardware | [Quick start: simulation](getting-started/simulation.md) |
-| Drive a real robot for the first time | [Safety](safety.md), then [Quick start: hardware](getting-started/hardware.md) |
-| Write software for it | [Control architecture](programming/control-architecture.md) |
-| Know whether it fits your system | [Specifications](reference/specifications.md) |
-| Get the signs right | [Coordinate conventions](reference/conventions.md) |
+<div class="grid cards" markdown>
+
+-   **See it move**
+
+    No hardware needed. From nothing to a trotting robot on your own machine.
+
+    [Quick start: simulation](getting-started/simulation.md)
+
+-   **Drive a real one**
+
+    Read the safety page first. Then unboxing to first stand.
+
+    [Safety](safety.md) · [Quick start: hardware](getting-started/hardware.md)
+
+-   **Write software for it**
+
+    One topic drives the robot. The same interface in simulation and on
+    hardware.
+
+    [Control architecture](programming/control-architecture.md)
+
+-   **Check whether it fits**
+
+    What is measured, what is simulated, and what is not characterized yet.
+
+    [Specifications](reference/specifications.md)
+
+</div>
 
 ---
 

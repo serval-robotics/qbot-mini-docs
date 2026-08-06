@@ -1,0 +1,89 @@
+/* Serval Robotics brand palette, taken from servalrobotics.com so the
+   documentation and the website read as one company. The website is a dark
+   design; the light scheme below is its inversion rather than a second
+   palette. */
+
+:root {
+  --serval-blue:      #4c86ff;
+  --serval-blue-ink:  #86a9ff;
+  --serval-gold:      #d6a94e;
+  --serval-paper:     #0d0e12;
+  --serval-panel:     #15161d;
+  --serval-ink:       #edeef2;
+  --serval-ink-muted: #a3a5b0;
+  --serval-line:      #343643;
+}
+
+/* Light scheme. */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color:        var(--serval-paper);
+  --md-primary-fg-color--light: var(--serval-panel);
+  --md-primary-fg-color--dark:  #06070a;
+  --md-primary-bg-color:        var(--serval-ink);
+  --md-primary-bg-color--light: var(--serval-ink-muted);
+
+  --md-accent-fg-color:         var(--serval-blue);
+  --md-accent-fg-color--transparent: rgba(76, 134, 255, 0.1);
+
+  --md-typeset-a-color:         #2c62d6;
+}
+
+/* Dark scheme, which is the website's own palette. */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color:        var(--serval-paper);
+  --md-primary-fg-color--light: var(--serval-panel);
+  --md-primary-fg-color--dark:  #06070a;
+  --md-primary-bg-color:        var(--serval-ink);
+  --md-primary-bg-color--light: var(--serval-ink-muted);
+
+  --md-accent-fg-color:         var(--serval-blue-ink);
+  --md-accent-fg-color--transparent: rgba(134, 169, 255, 0.1);
+
+  --md-typeset-a-color:         var(--serval-blue-ink);
+
+  --md-default-bg-color:        var(--serval-paper);
+  --md-default-bg-color--light: var(--serval-panel);
+  --md-default-fg-color:        var(--serval-ink);
+  --md-default-fg-color--light: var(--serval-ink-muted);
+  --md-code-bg-color:           var(--serval-panel);
+}
+
+/* The header sits on paper rather than on a saturated brand colour: a
+   documentation site is read for minutes at a time, and a full-width block of
+   #4c86ff at the top of every page competes with the text. Blue carries links
+   and active states instead, where it means something. */
+.md-header {
+  border-bottom: 1px solid var(--serval-line);
+}
+
+.md-tabs {
+  border-bottom: 1px solid var(--serval-line);
+}
+
+/* Tables carry most of this documentation's substance — specifications,
+   message fields, parameters — so they get a little more room than the
+   default and a header that reads as a header. */
+.md-typeset table:not([class]) th {
+  background-color: var(--md-default-fg-color--lightest);
+  font-weight: 600;
+}
+
+.md-typeset table:not([class]) td,
+.md-typeset table:not([class]) th {
+  padding: 0.7em 1em;
+}
+
+/* Diagrams are drawn to be read, not decorated: give them the full column and
+   keep them off the page background so the white-bordered SVGs do not float. */
+.md-typeset img[src$=".svg"] {
+  display: block;
+  width: 100%;
+  max-width: 34rem;
+  margin: 1.6em auto;
+}
+
+/* The Basis column's value is that it is scannable. */
+.md-typeset table:not([class]) td:last-child {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.92em;
+}
