@@ -60,6 +60,7 @@ markdown_extensions:
       permalink: true
   - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.keys
   - pymdownx.highlight:
       anchor_linenums: true
 

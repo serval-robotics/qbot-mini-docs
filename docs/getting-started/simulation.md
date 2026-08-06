@@ -1,32 +1,92 @@
-# Simulation in ten minutes
+# Quick start: simulation
 
-The fastest path to seeing the robot move. No hardware required.
-
-!!! note "Being written"
-
-    This page is an outline. The sections below are what it will cover.
-
+The fastest way to see whether QBot Mini does what you need. **No hardware, no
+GPU** — the simulation runs the same control stack as the robot, so what walks
+here walks there.
 
 ## What you need
 
-Operating system, Python, and how much machine. A GPU is not required.
+| | |
+| :- | :- |
+| Operating system | Ubuntu 24.04 |
+| ROS 2 | Jazzy |
+| Graphics | None required. A viewer window needs a display; headless runs do not |
 
 ## Getting the software
 
-How the simulation and control stack reach you.
+!!! note "Being written"
+
+    How the software reaches you depends on your arrangement with us and is
+    being documented separately. Ask us — this is not a blocker, it is a
+    paperwork question.
 
 ## Run it
 
-One command to a standing robot, and what you should see.
+```bash
+ros2 launch qbot_bringup sim.launch.py use_viewer:=true
+```
 
-## Make it walk
+A viewer window opens and the robot stands. That is the whole check that your
+environment works.
 
-The shortest command sequence to a trot, and how to tell it is working.
+To make it walk:
 
-## Play a scenario
+```bash
+ros2 launch qbot_bringup sim.launch.py use_viewer:=true gait:=trot vx:=0.2
+```
 
-Running a scripted route instead of driving manually.
+The robot trots forward at 0.2 m/s until you stop it with ++ctrl+c++.
 
-## Where to go next
+## Launch arguments
 
-The web console for interactive driving, or the command interface for writing your own application.
+| Argument | Default | Meaning |
+| :- | :-: | :- |
+| `use_viewer` | `false` | Open the viewer window |
+| `commander` | `param` | Where commands come from: `param`, `web` or `script` |
+| `gait` | `stand` | `stand`, `walk` or `trot` |
+| `vx`, `vy` | `0.0` | Body-frame velocity, m/s |
+| `yaw_rate` | `0.0` | Turn rate, rad/s, positive turns left |
+| `body_height` | `0.0` | Offset from stance height, m |
+| `body_roll`, `body_pitch`, `body_yaw` | `0.0` | Static posture, rad |
+| `scenario` | `""` | Scenario file to play, with `commander:=script` |
+| `loop` | `false` | Restart the scenario when it ends |
+
+The `gait`, velocity and posture arguments apply to `commander:=param` only —
+they are how you drive the robot without writing any code or opening a browser.
+
+!!! warning "`commander` is matched exactly and is not validated"
+
+    A typo starts **no** command source at all, and the robot simply never
+    moves. If nothing happens, check this argument first.
+
+## Drive it from the browser
+
+```bash
+ros2 launch qbot_bringup sim.launch.py use_viewer:=true commander:=web
+```
+
+Then open the URL logged at startup, normally `http://127.0.0.1:8642`. See
+[The web console](web-console.md).
+
+## Write your own controller
+
+The simulation publishes and subscribes exactly what the robot does. Point your
+application at `/body_cmd` and it will drive both:
+
+```bash
+ros2 launch qbot_bringup sim.launch.py use_viewer:=true commander:=param
+# then, from another terminal, publish your own /body_cmd
+```
+
+See [Control architecture](../programming/control-architecture.md) for where your
+code sits, and [ROS 2 interface](../programming/ros2-interface.md) for the
+message it sends.
+
+## What to try next
+
+| | |
+| :- | :- |
+| Drive it by hand | [The web console](web-console.md) |
+| Script a repeatable route | [Scenarios and recording](../programming/scenarios-and-recording.md) |
+| Understand the sign conventions before writing code | [Coordinate conventions](../reference/conventions.md) |
+| Nothing happened | [Troubleshooting](../maintenance/troubleshooting.md) |
