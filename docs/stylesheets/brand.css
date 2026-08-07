@@ -409,6 +409,66 @@
   margin-top: 0.4em;
 }
 
+/* ---- Navigation ------------------------------------------------------- */
+
+/* Material sizes the navigation column so it stops above the footer, and lets
+   the tree scroll inside whatever is left. With nineteen entries at the stock
+   rhythm the tree is 654px tall, which no longer fits once the footer claims
+   157px at the foot of the viewport: on a laptop screen the Maintenance group
+   disappears at the bottom of a page. A tighter rhythm keeps the whole tree
+   visible, and reads as a contents list rather than a stack of buttons. */
+@media screen and (min-width: 76.25em) {
+  /* The site name already sits in the header, two centimetres above and always
+     in view. Repeating it as the heading of the tree costs a row the tree
+     needs and tells the reader nothing. */
+  .md-sidebar--primary .md-nav--primary > .md-nav__title {
+    display: none;
+  }
+
+  .md-sidebar--primary .md-nav__link {
+    margin-top: 0.34em;
+  }
+
+  .md-sidebar--primary .md-nav__item--section {
+    margin: 0.78em 0 0;
+  }
+
+  .md-sidebar--primary .md-nav__item--section > .md-nav__link {
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--sr-fg-muted);
+  }
+
+  /* Where the tree is genuinely taller than the space — a very short window —
+     it still scrolls, so the scrollbar stays visible rather than appearing on
+     hover. A cut-off list with no scrollbar reads as a broken menu. */
+  .md-sidebar--primary .md-sidebar__scrollwrap::-webkit-scrollbar-thumb {
+    background-color: var(--sr-rule);
+  }
+}
+
+/* ---- Footer ----------------------------------------------------------- */
+
+/* The previous/next bar is a slab at Material's default proportions, and its
+   height is taken directly out of the navigation column at the foot of a page.
+   Slimmer serves both: less weight under the text, more room for the tree. */
+.md-footer__link {
+  margin-top: 0.55rem;
+  margin-bottom: 0.3rem;
+}
+
+.md-footer__title {
+  font-size: 0.82rem;
+  margin-bottom: 0.45rem;
+}
+
+.md-footer__direction {
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 /* ---- Narrow screens --------------------------------------------------- */
 
 @media screen and (max-width: 76.1875em) {
