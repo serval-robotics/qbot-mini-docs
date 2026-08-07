@@ -434,8 +434,26 @@
     display: none;
   }
 
+  /* Wide enough that the longest entry holds one line even when a scrollbar
+     claims ten pixels. Without that margin the column oscillates: the tree
+     overflows by a hair, a scrollbar appears, the narrower column wraps two
+     entries, and the wrap guarantees the overflow that caused it. */
+  /* The pad above the first entry is air the tree can spend instead: the
+     column already reads as separate from the header without it. */
+  .md-sidebar--primary {
+    padding: 0.75rem 0;
+    width: 14rem;
+  }
+
+  /* Widening the column alone does nothing: Material caps the content inside
+     it at 11.5rem with a padding, so the cap has to move too. */
+  .md-sidebar--primary .md-sidebar__inner {
+    padding-right: calc(100% - 13.3rem);
+  }
+
   .md-sidebar--primary .md-nav__link {
-    margin-top: 0.42em;
+    font-size: 0.82rem;
+    margin-top: 0.8em;
   }
 
   /* A group heading is a heading, not a peer of the pages beneath it: larger,
@@ -444,23 +462,23 @@
   .md-sidebar--primary .md-nav__item--nested > .md-nav__link {
     color: var(--sr-fg);
     font-family: var(--sr-display);
-    font-size: 0.82rem;
+    font-size: 0.9rem;
     font-weight: 600;
     letter-spacing: -0.005em;
-    margin-top: 0.85em;
+    margin-top: 0.95em;
   }
 
   /* The pages of an open group hang off a hairline, so the group reads as one
      block and the eye can follow the indent back up to its heading. */
   .md-sidebar--primary .md-nav__item--nested .md-nav {
     border-left: 1px solid var(--sr-rule);
-    margin: 0.3rem 0 0.6rem 0.05rem;
+    margin: 0.4rem 0 0.35rem 0.05rem;
     padding-left: 0.35rem;
   }
 
   .md-sidebar--primary .md-nav__item--nested .md-nav .md-nav__link {
-    font-size: 0.76rem;
-    margin-top: 0.55em;
+    font-size: 0.82rem;
+    margin-top: 0.8em;
   }
 
   /* The page you are on carries the accent; the rule beside it marks where in
@@ -487,13 +505,13 @@
    height is taken directly out of the navigation column at the foot of a page.
    Slimmer serves both: less weight under the text, more room for the tree. */
 .md-footer__link {
-  margin-top: 0.55rem;
-  margin-bottom: 0.3rem;
+  margin-top: 0.32rem;
+  margin-bottom: 0.22rem;
 }
 
 .md-footer__title {
   font-size: 0.82rem;
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.35rem;
 }
 
 .md-footer__direction {
