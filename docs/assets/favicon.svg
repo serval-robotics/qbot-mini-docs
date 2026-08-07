@@ -1,10 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
   <title>QBot Mini documentation</title>
-  <!-- A browser tab shows this at sixteen pixels beside the company's own
-       favicon, so it has to be told apart from the mark rather than echo it: a
-       Q for the product, drawn as geometry so no font has to be present, on the
-       brand's paper with the brand's accent for the tail. -->
+  <!-- A tab shows this at sixteen pixels next to the company's own mark, so it
+       has to be told apart from the cat's head rather than echo it, and it has
+       to say documentation rather than product. The drawing is the robot's own
+       five-bar leg — body, two thighs, two calves, foot — and the bar beneath
+       it is a sheet's title block. The mechanism stays the loudest thing in
+       the mark; one rule is all it takes to put it on a sheet. -->
   <rect width="64" height="64" rx="14" fill="#0d0e12"/>
-  <circle cx="30" cy="29" r="13.5" fill="none" stroke="#ffffff" stroke-width="7.5"/>
-  <path d="M35 36 L46 48" fill="none" stroke="#4c86ff" stroke-width="7.5" stroke-linecap="round"/>
+  <path d="M23 14 H41 M23 14 L16 28 L32 42 L48 28 L41 14" fill="none" stroke="#ffffff"
+        stroke-width="5.5" stroke-linejoin="round" stroke-linecap="round"/>
+  <rect x="14" y="48" width="36" height="6.5" rx="3.25" fill="#4c86ff"/>
 </svg>
