@@ -419,6 +419,45 @@
   margin-top: 0.4em;
 }
 
+/* ---- The sheet -------------------------------------------------------- */
+
+/* A drawing sheet rules its title block off from the drawing area rather than
+   trusting whitespace to say where one ends and the other begins. The
+   navigation gets the same treatment: its own ground, running to the edge of
+   the window, closed by a rule at the column's edge. Painted on the main
+   element rather than the column, because the column is only as tall as its
+   own contents and this has to run the height of the page. */
+@media screen and (min-width: 76.25em) {
+  .md-main {
+    --sr-gutter: max(0px, (100% - 61rem) / 2);
+    --sr-sheet-edge: calc(var(--sr-gutter) + 14rem);
+
+    background-image: linear-gradient(
+      to right,
+      var(--sr-bg-panel) 0 calc(var(--sr-sheet-edge) - 1px),
+      var(--sr-rule) calc(var(--sr-sheet-edge) - 1px) var(--sr-sheet-edge),
+      transparent var(--sr-sheet-edge)
+    );
+  }
+
+  /* Air between the rule and the first character of the text. */
+  .md-content {
+    padding-left: 1.2rem;
+  }
+}
+
+/* The section a page belongs to, above its title. The tree is collapsed, so
+   this is the only thing on the page that says where in the manual you are. */
+.md-typeset .sheet-section {
+  color: var(--sr-fg-muted);
+  font-family: var(--sr-display);
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin: 0 0 0.5rem;
+}
+
 /* ---- Navigation ------------------------------------------------------- */
 
 /* Nineteen entries laid out flat came to 654px, taller than the space left

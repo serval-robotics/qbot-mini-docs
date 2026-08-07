@@ -12,3 +12,16 @@
 {% block extrahead %}
   <meta name="robots" content="noindex, nofollow">
 {% endblock %}
+
+{#
+  The navigation tree collapses, so a reader who arrives on a page from a
+  search result or a link cannot see which part of the manual they landed in.
+  The section name above the title says so, and comes from the tree itself
+  rather than being written out on each page.
+#}
+{% block content %}
+  {% if page.parent and page.parent.title %}
+    <p class="sheet-section">{{ page.parent.title }}</p>
+  {% endif %}
+  {{ super() }}
+{% endblock %}
