@@ -99,7 +99,7 @@ await call("Page.enable");
 await call("Emulation.setDeviceMetricsOverride", {
   width,
   height,
-  deviceScaleFactor: 1,
+  deviceScaleFactor: Number(args.scale || 1),
   mobile: false,
 });
 
@@ -150,7 +150,14 @@ if (args.eval) {
 }
 
 if (args.out) {
-  const { data } = await call("Page.captureScreenshot", { format: "png" });
+  // --clip x,y,w,h photographs one region, magnified: a hairline that is
+  // ambiguous at 1:1 is unmistakable at 3:1.
+  const params = { format: "png" };
+  if (args.clip) {
+    const [x, y, w, h] = args.clip.split(",").map(Number);
+    params.clip = { x, y, width: w, height: h, scale: Number(args.scale || 1) };
+  }
+  const { data } = await call("Page.captureScreenshot", params);
   writeFileSync(args.out, Buffer.from(data, "base64"));
   console.log(args.out);
 }

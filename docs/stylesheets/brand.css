@@ -411,32 +411,50 @@
 
 /* ---- Navigation ------------------------------------------------------- */
 
-/* Material sizes the navigation column so it stops above the footer, and lets
-   the tree scroll inside whatever is left. With nineteen entries at the stock
-   rhythm the tree is 654px tall, which no longer fits once the footer claims
-   157px at the foot of the viewport: on a laptop screen the Maintenance group
-   disappears at the bottom of a page. A tighter rhythm keeps the whole tree
-   visible, and reads as a contents list rather than a stack of buttons. */
+/* Nineteen entries laid out flat came to 654px, taller than the space left
+   once the footer claims the foot of the viewport, so the last group was
+   silently cut off; and nineteen links of equal weight are a wall to read
+   rather than a map. The tree collapses instead: five groups and two loose
+   pages, the group you are in already open. The whole shape of the manual
+   reads in seven lines, and it fits any window worth supporting. */
 @media screen and (min-width: 76.25em) {
-  /* The site name already sits in the header, two centimetres above and always
-     in view. Repeating it as the heading of the tree costs a row the tree
-     needs and tells the reader nothing. */
+  /* The site name already sits in the header, always in view. Repeating it as
+     the heading of the tree costs a row and tells the reader nothing. */
   .md-sidebar--primary .md-nav--primary > .md-nav__title {
     display: none;
   }
 
   .md-sidebar--primary .md-nav__link {
-    margin-top: 0.34em;
+    margin-top: 0.42em;
   }
 
-  .md-sidebar--primary .md-nav__item--section {
-    margin: 0.78em 0 0;
+  /* A group heading is a heading, not a peer of the pages beneath it. */
+  .md-sidebar--primary .md-nav__item--nested > .md-nav__link {
+    color: var(--sr-fg);
+    font-family: var(--sr-display);
+    font-weight: 600;
+    letter-spacing: -0.005em;
   }
 
-  .md-sidebar--primary .md-nav__item--section > .md-nav__link {
-    font-size: 0.72rem;
-    letter-spacing: 0.06em;
-    text-transform: uppercase;
+  /* The pages of an open group hang off a hairline, so the group reads as one
+     block and the eye can follow the indent back up to its heading. */
+  .md-sidebar--primary .md-nav__item--nested .md-nav {
+    border-left: 1px solid var(--sr-rule);
+    margin: 0.15rem 0 0.5rem 0.05rem;
+    padding-left: 0.35rem;
+  }
+
+  .md-sidebar--primary .md-nav__item--nested .md-nav .md-nav__link {
+    margin-top: 0.3em;
+  }
+
+  /* The page you are on carries the accent; the rule beside it marks where in
+     the group you are without another colour. */
+  .md-sidebar--primary .md-nav__item--active > .md-nav__link {
+    font-weight: 600;
+  }
+
+  .md-sidebar--primary .md-nav__icon {
     color: var(--sr-fg-muted);
   }
 
