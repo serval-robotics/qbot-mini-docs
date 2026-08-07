@@ -46,6 +46,9 @@ theme:
     - search.suggest
     - search.highlight
 
+hooks:
+  - scripts/cachebust.py
+
 extra_css:
   - stylesheets/brand.css
 
