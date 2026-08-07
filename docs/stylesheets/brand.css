@@ -120,6 +120,16 @@
 
 /* ---- Chrome ----------------------------------------------------------- */
 
+/* The header carries the company lockup rather than the bare mark, so a reader
+   who arrives from a search result can see whose robot this is. Material boxes
+   the logo into a square; a wide lockup needs its own width back. Both colour
+   schemes keep a dark header, so one artwork serves both. */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.5rem;
+  width: auto;
+}
+
 .md-header,
 .md-tabs {
   border-bottom: 1px solid var(--sr-line);
@@ -428,24 +438,29 @@
     margin-top: 0.42em;
   }
 
-  /* A group heading is a heading, not a peer of the pages beneath it. */
+  /* A group heading is a heading, not a peer of the pages beneath it: larger,
+     in the display face, with room around it so the tree reads as five blocks
+     rather than one list. */
   .md-sidebar--primary .md-nav__item--nested > .md-nav__link {
     color: var(--sr-fg);
     font-family: var(--sr-display);
+    font-size: 0.82rem;
     font-weight: 600;
     letter-spacing: -0.005em;
+    margin-top: 0.85em;
   }
 
   /* The pages of an open group hang off a hairline, so the group reads as one
      block and the eye can follow the indent back up to its heading. */
   .md-sidebar--primary .md-nav__item--nested .md-nav {
     border-left: 1px solid var(--sr-rule);
-    margin: 0.15rem 0 0.5rem 0.05rem;
+    margin: 0.3rem 0 0.6rem 0.05rem;
     padding-left: 0.35rem;
   }
 
   .md-sidebar--primary .md-nav__item--nested .md-nav .md-nav__link {
-    margin-top: 0.3em;
+    font-size: 0.76rem;
+    margin-top: 0.55em;
   }
 
   /* The page you are on carries the accent; the rule beside it marks where in
