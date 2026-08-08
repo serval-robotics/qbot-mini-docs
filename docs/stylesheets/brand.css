@@ -371,6 +371,9 @@
   color: var(--sr-fg);
   line-height: 1.1;
   margin-bottom: 0.5rem;
+  /* A quantity and its unit are one thing to read. Broken across two lines
+     the figure reads as the whole answer and the unit as an afterthought. */
+  white-space: nowrap;
 }
 
 .plate__cell--unknown .plate__value {

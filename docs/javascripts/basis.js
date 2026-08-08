@@ -38,9 +38,38 @@
     });
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", mark);
-  } else {
+  /* Keep a quantity and its unit on one line.
+   *
+   * A column narrow enough will break "0.085 m/s" after the number, and the
+   * figure then reads as the whole answer with the unit stranded underneath.
+   * A non-breaking space fixes it, but written into the Markdown by hand it is
+   * invisible to the next person editing the table and survives exactly as
+   * long as nobody touches the row. Doing it here means it cannot be lost.
+   *
+   * The units are listed rather than pattern-matched, so an ordinary word
+   * after a number — "12 legs", "3 seconds" — is left alone. */
+  var UNITS = "m|mm|cm|s|ms|kg|g|N|N·m|Nm|m/s|rad|rad/s|deg|deg/s|Hz|kHz|V|A|W|°|%";
+  var QUANTITY = new RegExp("(\\d)[\\u0020\\u202f](" + UNITS + ")(?![\\w/\\u00b7])", "g");
+
+  function glue() {
+    document.querySelectorAll(".md-typeset table td, .md-typeset table th")
+      .forEach(function (cell) {
+        cell.childNodes.forEach(function (node) {
+          if (node.nodeType !== Node.TEXT_NODE) return;
+          var glued = node.nodeValue.replace(QUANTITY, "$1\u00a0$2");
+          if (glued !== node.nodeValue) node.nodeValue = glued;
+        });
+      });
+  }
+
+  function run() {
     mark();
+    glue();
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", run);
+  } else {
+    run();
   }
 })();
