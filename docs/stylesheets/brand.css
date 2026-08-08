@@ -179,8 +179,16 @@
   border-top: 0;
 }
 
+/* Specification tables read as a list of named quantities, so their first
+   column holds its label on one line. */
 .md-typeset table:not([class]) td:first-child {
   min-width: 11rem;
+}
+
+/* A table with four or more columns cannot afford it: the guarantee is spent
+   on the narrowest column and the one carrying the prose is left a ribbon. */
+.md-typeset table:not([class]):has(th:nth-child(4)) td:first-child {
+  min-width: 0;
 }
 
 .md-typeset table:not([class]) code {
@@ -188,6 +196,9 @@
   background: transparent;
   padding: 0;
   color: inherit;
+  /* An identifier broken across two lines reads as two identifiers, and a
+     reader who retypes what they see gets a parameter that does not exist. */
+  white-space: nowrap;
 }
 
 /* ---- The Basis column ------------------------------------------------- */
@@ -242,6 +253,27 @@
 .md-typeset [data-basis-table] td[data-basis="unknown"]::before {
   background: var(--sr-gold);
   opacity: 0.55;
+}
+
+/* ---- Relations -------------------------------------------------------- */
+
+/* A relation between quantities, set apart from the prose that explains it.
+   Centred and ruled top and bottom, the way a drawing sets out a formula in
+   its notes rather than running it into a sentence. */
+.md-typeset .formula {
+  border-top: 1px solid var(--sr-rule);
+  border-bottom: 1px solid var(--sr-rule);
+  font-size: 0.95rem;
+  margin: 1.6em 0;
+  padding: 0.9em 1em;
+  text-align: center;
+}
+
+.md-typeset .formula code {
+  background: transparent;
+  color: var(--sr-accent);
+  font-size: 1em;
+  padding: 0;
 }
 
 /* ---- Diagrams --------------------------------------------------------- */
