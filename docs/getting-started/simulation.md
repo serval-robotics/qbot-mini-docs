@@ -5,7 +5,7 @@ GPU** — the simulation runs the same control stack as the robot, so what walks
 here walks there.
 
 <figure class="render">
-  <img src="../../assets/images/scene-warehouse-shelves.webp" alt="QBot Mini crossing a floor marking in a warehouse scene" width="1600" height="900">
+  <img src="../../assets/images/sim-warehouse-still.webp" alt="QBot Mini walking beside pallet racking in a warehouse scene" width="1920" height="1080">
   <figcaption>A run recorded in this simulation, re-rendered in NVIDIA Isaac Sim. The viewer window you get here is plainer — the motion is the same.</figcaption>
 </figure>
 
