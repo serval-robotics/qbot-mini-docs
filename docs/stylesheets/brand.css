@@ -645,3 +645,51 @@
     transition: none;
   }
 }
+
+/* ---- Rendered stills and clips ----------------------------------------- */
+
+/* Renders follow the same discipline as the numbers: each states in its
+   caption how it was produced. The hairline frame keeps a photographic
+   image on the drawing-sheet language the rest of the page uses. */
+.md-typeset figure.render {
+  display: block;
+  width: 100%;
+  margin: 1.8em 0;
+}
+
+.md-typeset figure.render img,
+.md-typeset figure.render video {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border: 1px solid var(--sr-rule);
+}
+
+.md-typeset figure.render figcaption {
+  font-family: var(--md-code-font-family, monospace);
+  font-size: 0.62rem;
+  letter-spacing: 0.02em;
+  color: var(--sr-fg-muted);
+  text-align: left;
+  margin: 0.55em 0 0;
+  max-width: none;
+}
+
+/* A sheet of scene renders, two up. */
+.md-typeset .scene-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem 1.1rem;
+  margin: 1.8em 0;
+}
+
+.md-typeset .scene-grid figure.render {
+  margin: 0;
+}
+
+@media screen and (max-width: 44.9375em) {
+  .md-typeset .scene-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

@@ -15,7 +15,7 @@ no cloud service, no network dependency.</p>
 
 </div>
 <div class="hero__art">
-  <img src="assets/render-placeholder.svg" alt="Placeholder reserved for the product render" width="1300" height="738">
+  <img src="assets/images/qbot-mini-render.png" alt="QBot Mini — white quadruped robot with closed five-bar legs, product render" width="1400" height="1003">
 </div>
 </div>
 
@@ -53,6 +53,11 @@ yet, it says so — see [Specifications](reference/specifications.md).
 - Runs scripted routes, and records what happened for analysis
 - Exposes everything over ROS 2, with no cloud service and no network dependency
 - Simulates identically: the same controller drives the model and the machine
+
+<figure class="render">
+  <video src="assets/video/warehouse-walk.mp4" autoplay loop muted playsinline width="1280" height="720"></video>
+  <figcaption>Trot under velocity command. A recorded simulation run, re-rendered in NVIDIA Isaac Sim.</figcaption>
+</figure>
 
 ## What it does not do
 

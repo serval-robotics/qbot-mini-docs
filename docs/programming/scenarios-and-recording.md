@@ -13,6 +13,28 @@ A Python file describing a sequence of movements, replayed identically on every
 run. Scenarios are how a demonstration becomes repeatable and how an experiment
 becomes comparable between runs.
 
+A recorded run is also the input to rendering: the same trajectory can be
+re-rendered in NVIDIA Isaac Sim in any of the prepared scenes.
+
+<div class="scene-grid">
+  <figure class="render">
+    <img src="../../assets/images/scene-studio.webp" alt="QBot Mini in the studio scene" width="1600" height="900" loading="lazy">
+    <figcaption>studio</figcaption>
+  </figure>
+  <figure class="render">
+    <img src="../../assets/images/scene-grid-curved.webp" alt="QBot Mini on the curved grid scene" width="1600" height="900" loading="lazy">
+    <figcaption>grid_curved</figcaption>
+  </figure>
+  <figure class="render">
+    <img src="../../assets/images/scene-warehouse-shelves.webp" alt="QBot Mini in the warehouse scene, beside pallet racking" width="1600" height="900" loading="lazy">
+    <figcaption>warehouse_shelves</figcaption>
+  </figure>
+  <figure class="render">
+    <img src="../../assets/images/scene-hospital.webp" alt="QBot Mini in the hospital scene" width="1600" height="900" loading="lazy">
+    <figcaption>hospital</figcaption>
+  </figure>
+</div>
+
 ## The file format
 
 Structure of a scenario file, how it is loaded, and how to pass one at launch.
