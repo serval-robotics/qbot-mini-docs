@@ -56,8 +56,8 @@ setpoints** — changing gait never inherits the previous gait's speed.
 
 | Gait | Step frequency | Speed cap | Turn cap | Step height |
 | :- | :-: | :-: | :-: | :-: |
-| `walk` | 0.3 Hz | 0.05 m/s | 0.3 rad/s | 0.05 m |
-| `trot` | 1.5 Hz | 0.15 m/s | 1.0 rad/s | 0.05 m |
+| `walk` | 0.6 Hz | 0.04 m/s | 0.3 rad/s | 0.06 m |
+| `trot` | 1.4 Hz | 0.15 m/s | 1.0 rad/s | 0.05 m |
 | `stand` | — | — | — | 0.05 m |
 
 `stand` has no preset because the whole drive row is locked while standing. Step

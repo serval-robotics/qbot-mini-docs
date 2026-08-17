@@ -20,20 +20,20 @@ no cloud service, no network dependency.</p>
 </div>
 
 <div class="plate">
-  <div class="plate__cell">
+  <div class="plate__cell plate__cell--unknown">
     <span class="plate__label">Mass</span>
-    <span class="plate__value">2.0 kg</span>
-    <span class="plate__basis plate__basis--measured">Measured</span>
+    <span class="plate__value">—</span>
+    <span class="plate__basis plate__basis--unknown">Not yet characterized</span>
   </div>
   <div class="plate__cell">
     <span class="plate__label">Joints</span>
     <span class="plate__value">12</span>
     <span class="plate__basis plate__basis--measured">Three per leg</span>
   </div>
-  <div class="plate__cell">
+  <div class="plate__cell plate__cell--unknown">
     <span class="plate__label">Trot speed</span>
-    <span class="plate__value">0.22 m/s</span>
-    <span class="plate__basis plate__basis--simulated">Simulated</span>
+    <span class="plate__value">—</span>
+    <span class="plate__basis plate__basis--unknown">Not yet characterized</span>
   </div>
   <div class="plate__cell plate__cell--unknown">
     <span class="plate__label">Payload</span>
@@ -69,8 +69,9 @@ Stating this plainly is what makes the rest of the documentation worth trusting.
   avoidance in the shipped software. It goes where it is told.
 - **Not open source.** The gait generator and the impedance controller are
   proprietary. The interface to them is fully specified; their internals are not.
-- **Not characterized on every axis.** Payload, runtime and gradeability have not
-  been measured. Where a figure is unknown, the
+- **Not characterized on every axis.** Mass, speed, payload, runtime and
+  gradeability have not been measured on the current body. Where a figure is
+  unknown, the
   [specifications](reference/specifications.md) say so rather than estimating.
 
 ## How to read this
