@@ -3,7 +3,7 @@
 
 <p class="hero__eyebrow">Serval Robotics</p>
 
-# QBot Mini
+# Q-Bot Mini
 
 Open quadruped development platform. Twelve joints, a closed five-bar leg, ROS 2
 on top, and a MuJoCo simulation that runs the same control stack as the
@@ -15,7 +15,7 @@ no cloud service, no network dependency.</p>
 
 </div>
 <div class="hero__art">
-  <img src="assets/images/qbot-mini-render.png" alt="QBot Mini — white quadruped robot with closed five-bar legs, product render" width="1400" height="1003">
+  <img src="assets/images/qbot-mini-render.png" alt="Q-Bot Mini — white quadruped robot with closed five-bar legs, product render" width="1400" height="1003">
 </div>
 </div>
 

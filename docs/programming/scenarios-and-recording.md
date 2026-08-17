@@ -18,19 +18,19 @@ re-rendered in NVIDIA Isaac Sim in any of the prepared scenes.
 
 <div class="scene-grid">
   <figure class="render">
-    <img src="../../assets/images/scene-studio.webp" alt="QBot Mini walking in the studio scene" width="1920" height="1040" loading="lazy">
+    <img src="../../assets/images/scene-studio.webp" alt="Q-Bot Mini walking in the studio scene" width="1920" height="1040" loading="lazy">
     <figcaption>studio</figcaption>
   </figure>
   <figure class="render">
-    <img src="../../assets/images/scene-room.webp" alt="QBot Mini walking on a wooden floor in the room scene" width="1920" height="1040" loading="lazy">
+    <img src="../../assets/images/scene-room.webp" alt="Q-Bot Mini walking on a wooden floor in the room scene" width="1920" height="1040" loading="lazy">
     <figcaption>room</figcaption>
   </figure>
   <figure class="render">
-    <img src="../../assets/images/scene-warehouse.webp" alt="QBot Mini walking across a floor marking in the warehouse scene" width="1920" height="1040" loading="lazy">
+    <img src="../../assets/images/scene-warehouse.webp" alt="Q-Bot Mini walking across a floor marking in the warehouse scene" width="1920" height="1040" loading="lazy">
     <figcaption>warehouse</figcaption>
   </figure>
   <figure class="render">
-    <img src="../../assets/images/scene-exhibition.webp" alt="QBot Mini walking on a polished floor in the exhibition scene" width="1920" height="1040" loading="lazy">
+    <img src="../../assets/images/scene-exhibition.webp" alt="Q-Bot Mini walking on a polished floor in the exhibition scene" width="1920" height="1040" loading="lazy">
     <figcaption>exhibition</figcaption>
   </figure>
 </div>

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 510 500" role="img"
-     aria-label="Block diagram of the QBot Mini control chain from an application through the locomotion and actuation layers to the legs">
+     aria-label="Block diagram of the Q-Bot Mini control chain from an application through the locomotion and actuation layers to the legs">
   <style>
     .open  { fill: #e3f2fd; stroke: #1565c0; stroke-width: 2; }
     .prop  { fill: #eceff1; stroke: #607d8b; stroke-width: 2; }

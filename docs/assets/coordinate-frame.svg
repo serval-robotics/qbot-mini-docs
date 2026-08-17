@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 360" role="img"
-     aria-label="Top-down view of QBot Mini showing the body frame axes, leg naming and positive yaw direction">
+     aria-label="Top-down view of Q-Bot Mini showing the body frame axes, leg naming and positive yaw direction">
   <style>
     .edge  { fill: none; stroke: #37474f; stroke-width: 2; }
     .body  { fill: #eceff1; stroke: #37474f; stroke-width: 2; }

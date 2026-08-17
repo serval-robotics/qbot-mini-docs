@@ -1,6 +1,6 @@
-# QBot Mini — documentation
+# Q-Bot Mini — documentation
 
-Source for the public QBot Mini documentation site, published by
+Source for the public Q-Bot Mini documentation site, published by
 [Serval Robotics](https://servalrobotics.com).
 
 This repository holds documentation only. It contains no robot source code, and
