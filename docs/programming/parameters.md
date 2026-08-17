@@ -48,26 +48,31 @@ stride = `vx` × `duty` × `period`
 
 | Parameter | Trot | Walk | Meaning |
 | :- | :-: | :-: | :- |
-| `period` | 0.55 s | 1.2 s | One gait cycle. Smaller is a faster cadence, not a faster robot |
-| `duty` | 0.75 | 0.85 | Fraction of the cycle a foot spends on the ground. Higher is more feet down at once, and more stable |
-| `step_height` | 0.04 m | 0.06 m | How far a foot lifts during its swing |
+| `period` | 0.714 s | 1.667 s | One gait cycle. Smaller is a faster cadence, not a faster robot |
+| `duty` | 0.65 | 0.85 | Fraction of the cycle a foot spends on the ground. Higher is more feet down at once, and more stable |
+| `step_height` | 0.05 m | 0.06 m | How far a foot lifts during its swing |
 
 Walk's floors are validated rather than silently applied: configure it below a
-1.2 s period or a 0.85 duty and it is clamped, with a warning naming what was
+1.0 s period or a 0.85 duty and it is clamped, with a warning naming what was
 asked for and what was run. A step height below 0.06 m warns and runs what you
 asked for.
 
-`trot.step_height` is worth knowing the shape of. Between 0.02 m and 0.05 m the
-foot's real clearance rises in proportion to it, so the parameter does what it
-says; 0.04 m is the tallest setting at which nothing else measurably degrades.
-Above it, turn rate starts falling off.
+`trot.step_height` is worth knowing the shape of. The lift arrives in proportion
+to what is asked for at every setting measured: 0.02, 0.03, 0.04 and 0.05 m of
+command gave 5.8, 8.4, 10.9 and 13.6 mm of clearance over the floor, so the
+shipped 0.05 m is also the most clearance any of them bought. What a taller lift
+costs is paid inside the swing window — turn rate, foot scuff and swing-phase
+torque all suffer when the leg is asked to lift further in the same time — and
+the shipped 0.714 s cycle at a 0.65 duty gives that swing 0.250 s, which is what
+makes this lift affordable. Shortening the period without lowering the lift
+spends that margin.
 
 ### Posture
 
 | Parameter | Default | Meaning |
 | :- | :-: | :- |
-| `stance_height` | 0.144 m | Neutral foot drop below the hip — how tall the robot stands before any command. About 73% of the leg's reach, which leaves travel in both directions |
-| `k_sway` | 0.2 | How far the body leans into its support polygon during a static walk |
+| `stance_height` | 0.16 m | Neutral foot drop below the hip — how tall the robot stands before any command. About 81% of the leg's 0.198 m reach, which leaves travel in both directions |
+| `k_sway` | 0.1 | How far the body leans into its support polygon during a static walk |
 
 Body height, roll, pitch and yaw are commanded per message rather than set as
 parameters; see the [ROS 2 interface](ros2-interface.md).
@@ -87,5 +92,6 @@ applies — is proprietary and ships pre-tuned. Its gains are not exposed as
 parameters, and the numbers above are the ones intended to be changed.
 
 If you need behaviour the parameters above cannot reach, ask us rather than
-working around them: the limits exist because the robot is 2 kg of actuator
-running at 1.39 N·m, and most of them are the reason it survives a mistake.
+working around them: the limits exist because the robot is a light machine whose
+joints top out at 1.39 N·m, and most of them are the reason it survives a
+mistake.

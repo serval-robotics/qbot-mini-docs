@@ -1,6 +1,6 @@
 # Safety
 
-QBot Mini is a **development platform, not a certified industrial product**. It
+Q-Bot Mini is a **development platform, not a certified industrial product**. It
 has no safety rating, no protective stop conforming to a machinery standard, and
 no assessment for operation around untrained people. Treat it as laboratory
 equipment: supervised, in a defined area, by someone who knows what it is about

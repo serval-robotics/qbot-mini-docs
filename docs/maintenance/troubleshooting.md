@@ -41,11 +41,11 @@ ros2 topic hz /leg_cmd     # is the gait generator producing output?
 ```
 
 **Check the speed cap.** From the console, each gait applies its own cap when
-selected, and the caps are deliberately low — `walk` is capped at 0.05 m/s.
+selected, and the caps are deliberately low — `walk` is capped at 0.04 m/s.
 
 ## `walk` ignores the period I set
 
-Walk is clamped to a static-stability floor: a period of at least 2.0 s. A
+Walk is clamped to a static-stability floor: a period of at least 1.0 s. A
 shorter period is refused and the clamp is logged as a warning by
 `locomotion_node`.
 

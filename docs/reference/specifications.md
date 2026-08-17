@@ -24,11 +24,17 @@
 
 | Parameter | Value | Basis |
 | :- | :- | :- |
-| Mass | 2.0 kg | Measured |
-| Leg linkage mass, per leg | 0.130 kg | Measured — two thighs and two calves, excluding hip and motors |
+| Mass | — | Not yet characterized |
+| Leg linkage mass, per leg | — | Not yet characterized |
 | Overall dimensions | — | Not yet characterized |
 | Stance height | — | Not yet characterized |
 | Foot contact radius | 0.025 m | Simulated |
+
+The masses that used to sit in the first two rows were weighed on an earlier body
+revision. The current body was redesigned lighter, with shorter links, and has
+not been on a scale — so those figures describe a machine that is no longer the
+one documented here. A mass propagates into every force and torque estimate made
+from it, which is why it is shown as a gap rather than carried forward.
 
 ## Actuation
 
@@ -54,16 +60,20 @@ instead of on the robot is the point.
 
 ## Performance
 
-Figures below are from the simulation model, which is calibrated against the
-robot but is not the robot. Hardware locomotion works — trot, walk and yaw all
-run on the machine — but has not been instrumented for speed, so those rows stay
-open rather than borrowing the simulated numbers.
+Nothing on this page borrows a number from an earlier version of the robot. The
+simulated speeds and standing height that used to sit here were run on the
+previous body and the previous gait shape, and neither is reproducible on the
+machine documented here, so they are withdrawn until the run is repeated.
+
+Hardware locomotion works — trot, walk and yaw all run on the machine — but has
+not been instrumented for speed, so that row stays open rather than borrowing a
+simulated number.
 
 | Parameter | Value | Basis |
 | :- | :- | :- |
-| Forward speed, trot | 0.22 m/s | Simulated — commanded 0.20 m/s, flat floor |
-| Forward speed, walk | 0.085 m/s | Simulated — commanded 0.08 m/s, flat floor |
-| Standing height | 0.193 m | Simulated |
+| Forward speed, trot | — | Not yet characterized |
+| Forward speed, walk | — | Not yet characterized |
+| Standing height | — | Not yet characterized |
 | Forward speed, hardware | — | Not yet characterized |
 | Payload | — | Not yet characterized |
 | Gradeability | — | Not yet characterized |
